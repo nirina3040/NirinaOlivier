@@ -1,0 +1,80 @@
+<section class="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Mes Compétences</h2>
+      <p class="section-subtitle">Technologies et outils que j'utilise</p>
+    </div>
+
+    <!-- Catégories -->
+    <div class="skills-categories">
+      <button 
+        *ngFor="let category of getSkillCategories()"
+        class="category-btn"
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory(category)">
+        <span>{{ category }}</span>
+        <span class="count">{{ skills[category]?.length || 0 }}</span>
+      </button>
+    </div>
+
+    <!-- Liste des compétences -->
+    <div class="skills-list" [class.animating]="isAnimating">
+      <div class="skill-item" *ngFor="let skill of selectedSkills; let i = index" 
+           [style.animation-delay]="i * 0.1 + 's'">
+        <div class="skill-header">
+          <div class="skill-info">
+            <i [class]="skill.icon" class="skill-icon"></i>
+            <span class="skill-name">{{ skill.name }}</span>
+          </div>
+          <span class="skill-level">{{ skill.level }}%</span>
+        </div>
+        
+        <div class="skill-bar">
+          <div 
+            class="skill-progress" 
+            [style.width.%]="skill.level"
+            [style.background]="getProgressColor(skill.level)">
+          </div>
+        </div>
+
+        <div class="skill-details">
+          <div class="skill-level-indicator">
+            <span 
+              *ngFor="let dot of [].constructor(5); let j = index"
+              class="level-dot"
+              [class.filled]="j < Math.ceil(skill.level / 20)">
+            </span>
+          </div>
+          <span class="skill-label">
+            {{ skill.level >= 90 ? 'Expert' : skill.level >= 75 ? 'Avancé' : skill.level >= 60 ? 'Intermédiaire' : 'Débutant' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistiques -->
+    <div class="skills-stats">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <span class="stat-number">{{ getSkillCategories().length }}</span>
+        <span class="stat-label">Catégories</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <span class="stat-number">{{ getTotalSkills() }}</span>
+        <span class="stat-label">Compétences</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <span class="stat-number">{{ getAverageLevel() }}%</span>
+        <span class="stat-label">Moyenne</span>
+      </div>
+    </div>
+  </div>
+</section>

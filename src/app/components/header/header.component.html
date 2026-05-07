@@ -1,0 +1,61 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="nav-container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo-text">&lt;RNO/&gt;</span>
+      <span class="logo-full">Mon Portfolio</span>
+    </a>
+
+    <!-- Menu burger pour mobile -->
+    <button 
+      class="menu-toggle" 
+      [class.active]="isMenuOpen"
+      (click)="toggleMenu()"
+      aria-label="Menu de navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li>
+        <a routerLink="/" 
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{exact: true}" 
+           (click)="closeMenu()">
+          Accueil
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" 
+           routerLinkActive="active" 
+           (click)="closeMenu()">
+          À propos
+        </a>
+      </li>
+      <li>
+        <a routerLink="/projects" 
+           routerLinkActive="active" 
+           (click)="closeMenu()">
+          Projets
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" 
+           routerLinkActive="active" 
+           (click)="closeMenu()">
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="assets/cv.pdf" 
+           target="_blank" 
+           class="btn-cv" 
+           (click)="closeMenu()">
+          Mon CV
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

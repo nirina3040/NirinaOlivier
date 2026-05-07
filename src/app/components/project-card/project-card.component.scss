@@ -1,0 +1,332 @@
+.project-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+
+    .project-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-image img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Image du projet
+.project-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+}
+
+// Icône par défaut
+.project-icon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s;
+  
+  i {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+}
+
+// Overlay au survol
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+// Liens dans l'overlay
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-link {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  background: white;
+  color: #333;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+
+    .tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Tooltip
+  .tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+}
+
+// Style GitHub
+.github-link:hover {
+  background: #333;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+// Style Démo (YouTube ou site)
+.demo-link:hover {
+  background: #ff0000;
+  color: white;
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+}
+
+.youtube-link:hover {
+  background: #ff0000;
+  color: white;
+}
+
+// Badge "Projet phare"
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  color: #333;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  z-index: 2;
+
+  i {
+    font-size: 0.7rem;
+    animation: starPulse 2s infinite;
+  }
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+// Informations du projet
+.project-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-description {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+// Tags technologies
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+
+  .tech-tag {
+    padding: 0.3rem 0.8rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: #667eea;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid #e0e0e0;
+    animation: fadeIn 0.5s ease-out both;
+
+    &:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Footer de la carte
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: auto;
+}
+
+.project-date {
+  color: #999;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  i {
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+}
+
+// Boutons d'action
+.project-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+
+  i {
+    font-size: 0.9rem;
+  }
+}
+
+.btn-github {
+  background: #24292e;
+  color: white;
+
+  &:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.btn-demo {
+  background: #667eea;
+  color: white;
+
+  &:hover {
+    background: #5a6fd6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  }
+}
+
+.btn-youtube {
+  background: #ff0000;
+  color: white;
+
+  &:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .project-image {
+    height: 180px;
+  }
+
+  .project-info {
+    padding: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .btn-action {
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+}

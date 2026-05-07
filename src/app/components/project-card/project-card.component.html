@@ -1,0 +1,87 @@
+<div class="project-card">
+  <div class="project-image" [style.background]="getGradient(0)">
+    <!-- Image si disponible -->
+    <img *ngIf="project.imageUrl && !imageError" 
+         [src]="project.imageUrl" 
+         [alt]="project.title" 
+         (error)="onImageError()"
+         loading="lazy">
+    
+    <!-- Icône par défaut si pas d'image -->
+    <div class="project-icon" *ngIf="!project.imageUrl || imageError">
+      <i class="fas fa-code"></i>
+    </div>
+    
+    <!-- Overlay au survol -->
+    <div class="project-overlay">
+      <div class="project-links">
+        <!-- Lien GitHub -->
+        <a *ngIf="project.githubUrl" 
+           [href]="project.githubUrl" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="project-link github-link" 
+           title="Voir le code source">
+          <i class="fab fa-github"></i>
+          <span class="tooltip">Code source</span>
+        </a>
+        
+        <!-- Lien Démo (YouTube ou site) -->
+        <a *ngIf="project.liveUrl" 
+           [href]="project.liveUrl" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="project-link demo-link" 
+           [class.youtube-link]="isYoutubeLink(project.liveUrl)"
+           title="Voir la démo">
+          <i [class]="isYoutubeLink(project.liveUrl) ? 'fab fa-youtube' : 'fas fa-external-link-alt'"></i>
+          <span class="tooltip">Voir la démo</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Badge featured -->
+    <span class="featured-badge" *ngIf="project.featured">
+      <i class="fas fa-star"></i> Projet phare
+    </span>
+  </div>
+
+  <div class="project-info">
+    <h3 class="project-title">{{ project.title }}</h3>
+    <p class="project-description">{{ getShortDescription() }}</p>
+    
+    <div class="project-tech">
+      <span *ngFor="let tech of project.technologies; let i = index" 
+            class="tech-tag"
+            [style.animation-delay]="i * 0.05 + 's'">
+        {{ tech }}
+      </span>
+    </div>
+
+    <div class="project-footer">
+      <span class="project-date">
+        <i class="far fa-calendar-alt"></i>
+        {{ project.createdAt ? (project.createdAt | date:'MMM yyyy') : '2024' }}
+      </span>
+      
+      <div class="project-actions">
+        <a *ngIf="project.githubUrl" 
+           [href]="project.githubUrl" 
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-action btn-github">
+          <i class="fab fa-github"></i> Code
+        </a>
+        <a *ngIf="project.liveUrl" 
+           [href]="project.liveUrl" 
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn-action btn-demo"
+           [class.btn-youtube]="isYoutubeLink(project.liveUrl)">
+          <i [class]="isYoutubeLink(project.liveUrl) ? 'fab fa-youtube' : 'fas fa-play'"></i> 
+          Démo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

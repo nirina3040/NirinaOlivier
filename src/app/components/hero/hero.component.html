@@ -1,0 +1,76 @@
+<section class="hero">
+  <div class="hero-background">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <div class="hero-container">
+    <!-- Photo de profil -->
+    <div class="hero-photo" [@fadeIn]>
+      <div class="photo-wrapper">
+        <img src="assets/logo.jpg" alt="RAZAFINIRINA Nomenjanahary Olivier">
+      </div>
+      <div class="photo-status">
+        <span class="status-dot"></span>
+        Disponible pour stage
+      </div>
+    </div>
+
+    <!-- Contenu texte -->
+    <div class="hero-content" [@fadeInUp]>
+      <div class="hero-badge" [@fadeIn]>
+        <span>👋 Bienvenue sur mon portfolio</span>
+      </div>
+
+      <h1 class="hero-title">
+        Bonjour, je suis
+        <span class="highlight">RAZAFINIRINA Nomenjanahary Olivier</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-prefix">Je suis</span>
+        <span class="role-text">{{ currentRole }}</span>
+        <span class="cursor">|</span>
+      </div>
+
+      <p class="hero-description" [@fadeIn]>
+        Étudiant en développement web, j'apprends à créer des applications 
+        modernes avec Angular et Node.js.
+      </p>
+
+      <div class="hero-buttons" [@fadeIn]>
+        <a routerLink="/projects" class="btn btn-primary">
+          <span>Voir mes projets</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a routerLink="/contact" class="btn btn-secondary">
+          <span>Me contacter</span>
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats" [@fadeIn]>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Projets</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">En cours</span>
+          <span class="stat-label">Formation</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2024</span>
+          <span class="stat-label">Début</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" [@fadeIn]>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <span>Scroll</span>
+  </div>
+</section>

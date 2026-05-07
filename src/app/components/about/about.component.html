@@ -1,0 +1,89 @@
+<section class="about" [@fadeInUp]>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">À propos de moi</h2>
+      <p class="section-subtitle">Découvrez mon parcours et mes passions</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Colonne gauche : Bio -->
+      <div class="about-bio" [@fadeInUp]>
+        <div class="bio-card">
+          <div class="bio-avatar">
+            <div class="avatar-photo">
+              <img src="assets/logo.jpg" alt="RAZAFINIRINA Nomenjanahary Olivier">
+            </div>
+          </div>
+          <h3>RAZAFINIRINA Nomenjanahary Olivier</h3>
+          <p class="bio-role">Développeur Full Stack</p>
+
+          <p class="bio-text">
+            Étudiant en développement web, je construis ce portfolio pour présenter
+            mes projets d'apprentissage et mes premières réalisations.
+          </p>
+
+          <div class="bio-info">
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>nirinaolivier9&#64;email.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+261 34 24 703 37</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Manaotsara II, Fianarantsoa</span>
+            </div>
+          </div>
+
+          <a href="assets/cv.pdf" class="btn-download" download>
+            <i class="fas fa-download"></i>
+            Télécharger mon CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Colonne droite : Expérience & Formation -->
+      <div class="about-details">
+        <!-- Expérience -->
+        <div class="timeline-section" [@fadeInUp]>
+          <h3 class="timeline-title">
+            <i class="fas fa-briefcase"></i>
+            Expérience Professionnelle
+          </h3>
+          <div class="timeline" [@staggerFade]>
+            <div class="timeline-item" *ngFor="let exp of experiences; let last = last">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-period">{{ exp.period }}</span>
+                <h4>{{ exp.title }}</h4>
+                <p class="timeline-company">{{ exp.company }}</p>
+                <p>{{ exp.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formation -->
+        <div class="timeline-section" [@fadeInUp]>
+          <h3 class="timeline-title">
+            <i class="fas fa-graduation-cap"></i>
+            Formation
+          </h3>
+          <div class="timeline" [@staggerFade]>
+            <div class="timeline-item" *ngFor="let edu of education; let last = last">
+              <div class="timeline-marker alt"></div>
+              <div class="timeline-content">
+                <span class="timeline-period">{{ edu.period }}</span>
+                <h4>{{ edu.title }}</h4>
+                <p class="timeline-company">{{ edu.school }}</p>
+                <p>{{ edu.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

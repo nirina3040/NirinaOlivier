@@ -1,0 +1,186 @@
+<section class="contact">
+  <div class="container">
+    <div class="section-header" [@fadeInUp]>
+      <h2 class="section-title">Contactez-moi</h2>
+      <p class="section-subtitle">Un projet en tête ? N'hésitez pas à me contacter</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Informations de contact -->
+      <div class="contact-info" [@fadeInUp]>
+        <div class="info-card">
+          <h3>Mes coordonnées</h3>
+          <p class="info-description">
+            Étudiant en développement web, je suis à la recherche d'opportunités 
+            pour apprendre et gagner en expérience. Contactez-moi pour discuter !
+          </p>
+
+          <div class="info-list">
+            <!-- Email -->
+            <a href="mailto:nirinaolivier9@gmail.com" class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Email</span>
+                <span class="info-value">nirinaolivier9&#64;gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Téléphone -->
+            <a href="tel:+261342470337" class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Téléphone</span>
+                <span class="info-value">+261 34 24 703 37</span>
+              </div>
+            </a>
+
+            <!-- Localisation -->
+            <a href="#" class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Localisation</span>
+                <span class="info-value">Manaotsara II, Fianarantsoa</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/nirinaolivier" target="_blank" rel="noopener" class="info-item">
+              <div class="info-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">LinkedIn</span>
+                <span class="info-value">linkedin.com/in/nirinaolivier</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/nirina3040" target="_blank" rel="noopener" class="info-item">
+              <div class="info-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">GitHub</span>
+                <span class="info-value">github.com/nirina3040</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/nirina3040" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/nirinaolivier" target="_blank" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de contact -->
+      <div class="contact-form-wrapper" [@fadeInUp]>
+        <div class="form-card">
+          <h3>Envoyez-moi un message</h3>
+          
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input 
+                  type="text" 
+                  id="name"
+                  formControlName="name"
+                  placeholder="Votre nom"
+                  [class.error]="f['name'].invalid && f['name'].touched">
+                <div class="error-message" *ngIf="f['name'].invalid && f['name'].touched">
+                  <span *ngIf="f['name'].errors?.['required']">Le nom est requis</span>
+                  <span *ngIf="f['name'].errors?.['minlength']">Minimum 2 caractères</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                  type="email" 
+                  id="email"
+                  formControlName="email"
+                  placeholder="votre@email.com"
+                  [class.error]="f['email'].invalid && f['email'].touched">
+                <div class="error-message" *ngIf="f['email'].invalid && f['email'].touched">
+                  <span *ngIf="f['email'].errors?.['required']">L'email est requis</span>
+                  <span *ngIf="f['email'].errors?.['email']">Email invalide</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input 
+                type="text" 
+                id="subject"
+                formControlName="subject"
+                placeholder="Sujet de votre message"
+                [class.error]="f['subject'].invalid && f['subject'].touched">
+              <div class="error-message" *ngIf="f['subject'].invalid && f['subject'].touched">
+                Le sujet est requis
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea 
+                id="message"
+                formControlName="message"
+                rows="6"
+                placeholder="Votre message..."
+                [class.error]="f['message'].invalid && f['message'].touched"></textarea>
+              <div class="error-message" *ngIf="f['message'].invalid && f['message'].touched">
+                <span *ngIf="f['message'].errors?.['required']">Le message est requis</span>
+                <span *ngIf="f['message'].errors?.['minlength']">Minimum 10 caractères</span>
+              </div>
+            </div>
+
+            <button 
+              type="submit" 
+              class="submit-btn"
+              [disabled]="contactForm.invalid || isSubmitting"
+              [class.submitting]="isSubmitting">
+              <span *ngIf="!isSubmitting && !submitted">
+                <i class="fas fa-paper-plane"></i>
+                Envoyer le message
+              </span>
+              <span *ngIf="isSubmitting">
+                <i class="fas fa-spinner fa-spin"></i>
+                Envoi en cours...
+              </span>
+              <span *ngIf="submitted && !isSubmitting">
+                <i class="fas fa-check-circle"></i>
+                Message envoyé !
+              </span>
+            </button>
+
+            <div class="success-message" *ngIf="submitted" [@fadeIn]>
+              <i class="fas fa-check-circle"></i>
+              <strong>Message envoyé avec succès !</strong>
+              <p>Je vous répondrai dans les plus brefs délais.</p>
+            </div>
+
+            <div class="error-alert" *ngIf="errorMessage" [@fadeIn]>
+              <i class="fas fa-exclamation-triangle"></i>
+              {{ errorMessage }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

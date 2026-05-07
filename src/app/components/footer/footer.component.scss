@@ -1,0 +1,145 @@
+.footer {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: white;
+  padding: 4rem 0 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #667eea;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.75rem;
+
+      a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #667eea;
+        }
+      }
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+
+  a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+
+  input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 0.9rem;
+
+    &:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  button {
+    width: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.footer-bottom {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
