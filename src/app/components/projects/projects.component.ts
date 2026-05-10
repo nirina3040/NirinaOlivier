@@ -142,7 +142,7 @@ export class ProjectsComponent implements OnInit {
       description: 'Motivation Education Prediction est une application intelligente conçue pour aider les utilisateurs à améliorer leur motivation, leur apprentissage et leur prise de décision grâce à l’analyse des données et à l’intelligence artificielle',
       imageUrl: 'assets/apex.png',
       technologies: ['Flutter', 'Python'],
-      githubUrl: 'https://github.com/nirina3040/NirinaOlivier',
+      githubUrl: 'https://github.com/RNO-Nirina-Olivier',
       liveUrl: 'https://youtu.be/bRSKyGKnd5A',
       featured: false,
       createdAt: new Date('2026-05-10')
