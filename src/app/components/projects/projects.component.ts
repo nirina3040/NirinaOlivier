@@ -130,7 +130,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Gestion de vokatra',
       description: 'Développement d\'une application web de gestion intégrée des ventes, collectes et paiements pour une église, permettant aux administrateurs, secrétaires, caissiers et collecteurs mobiles de gérer les activités, produits, transactions et dettes via des interfaces dédiées sur PC et mobile.',
       imageUrl: 'assets/vokatra.png',
-      technologies: ['Angular', 'Express'],
+      technologies: ['Angular', 'Express', 'PostgreSQL'],
       githubUrl: 'https://github.com/nirina3040/',
       liveUrl: 'https://www.youtube.com/watch?v=votre-video',
       featured: false,
