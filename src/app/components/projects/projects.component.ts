@@ -127,11 +127,11 @@ export class ProjectsComponent implements OnInit {
     },
     {
       _id: '5',
-      title: 'Chat Application',
-      description: 'Application de chat en temps réel avec Socket.io.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
+      title: 'Gestion de vokatra',
+      description: 'Développement d\'une application web de gestion intégrée des ventes, collectes et paiements pour une église, permettant aux administrateurs, secrétaires, caissiers et collecteurs mobiles de gérer les activités, produits, transactions et dettes via des interfaces dédiées sur PC et mobile.',
+      imageUrl: 'assets/vokatra.png',
       technologies: ['Angular', 'Express'],
-      githubUrl: 'https://github.com/nirina3040/chat-app',
+      githubUrl: 'https://github.com/nirina3040/',
       liveUrl: 'https://www.youtube.com/watch?v=votre-video',
       featured: false,
       createdAt: new Date('2024-05-15')
