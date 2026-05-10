@@ -138,14 +138,14 @@ export class ProjectsComponent implements OnInit {
     },
     {
       _id: '6',
-      title: 'Dashboard Admin',
-      description: 'Tableau de bord administrateur avec graphiques et statistiques.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
-      technologies: ['Angular', 'Python'],
-      githubUrl: 'https://github.com/nirina3040/dashboard',
-      liveUrl: 'https://www.youtube.com/watch?v=votre-video',
+      title: 'Motivation Education Prediction',
+      description: 'Motivation Education Prediction est une application intelligente conçue pour aider les utilisateurs à améliorer leur motivation, leur apprentissage et leur prise de décision grâce à l’analyse des données et à l’intelligence artificielle',
+      imageUrl: 'assets/apex.png',
+      technologies: ['Flutter', 'Python'],
+      githubUrl: 'https://github.com/nirina3040/NirinaOlivier',
+      liveUrl: 'https://youtu.be/bRSKyGKnd5A',
       featured: false,
-      createdAt: new Date('2024-06-20')
+      createdAt: new Date('2026-05-10')
     }
   ];
 }
