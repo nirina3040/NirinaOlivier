@@ -85,12 +85,12 @@ export class ProjectsComponent implements OnInit {
       _id: '1',
       title: 'Portfolio Personnel',
       description: 'Site portfolio créé avec Angular pour présenter mes projets et compétences.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
+      imageUrl: 'assets/porfolio.png',
       technologies: ['Angular'],
-      githubUrl: 'https://github.com/nirina3040/portfolio',
-      liveUrl: 'https://www.youtube.com/watch?v=votre-video',
+      githubUrl: 'https://github.com/nirina3040/NirinaOlivier',
+      liveUrl: 'https://youtu.be/8NUI1O6kbwY',
       featured: true,
-      createdAt: new Date('2024-01-15')
+      createdAt: new Date('2026-05-10')
     },
     {
       _id: '2',
