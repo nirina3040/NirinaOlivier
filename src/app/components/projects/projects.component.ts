@@ -116,12 +116,12 @@ export class ProjectsComponent implements OnInit {
     },
     {
       _id: '4',
-      title: 'E-commerce App',
-      description: 'Application e-commerce avec panier, paiement et gestion des commandes.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
+      title: 'Application Ford Algorithm',
+      description: 'Outil web de recherche opérationnelle pour calculer et visualiser les chemins critiques dans un graphe de tâches via l\'algorithme de FORD',
+      imageUrl: 'assets/ford.png', 
       technologies: ['Angular', 'Node.js'],
-      githubUrl: 'https://github.com/nirina3040/ecommerce',
-      liveUrl: 'https://www.youtube.com/watch?v=votre-video',
+      githubUrl: 'https://github.com/nirina3040/FORD_MAX_MIN',
+      liveUrl: 'https://youtu.be/og8jEWxqr4k',
       featured: true,
       createdAt: new Date('2024-04-05')
     },
