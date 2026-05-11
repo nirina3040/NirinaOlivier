@@ -119,11 +119,11 @@ export class ProjectsComponent implements OnInit {
       title: 'Application Ford Algorithm',
       description: 'Outil web de recherche opérationnelle pour calculer et visualiser les chemins critiques dans un graphe de tâches via l\'algorithme de FORD',
       imageUrl: 'assets/ford.png', 
-      technologies: ['Angular', 'Node.js'],
+      technologies: ['Angular', 'Python'],
       githubUrl: 'https://github.com/nirina3040/FORD_MAX_MIN',
       liveUrl: 'https://youtu.be/og8jEWxqr4k',
       featured: true,
-      createdAt: new Date('2024-04-05')
+      createdAt: new Date('2026-04-10')
     },
     {
       _id: '5',
@@ -134,7 +134,7 @@ export class ProjectsComponent implements OnInit {
       githubUrl: 'https://github.com/nirina3040/',
       liveUrl: 'https://www.youtube.com/watch?v=votre-video',
       featured: false,
-      createdAt: new Date('2024-05-15')
+      createdAt: new Date('2026-05-15')
     },
     {
       _id: '6',
