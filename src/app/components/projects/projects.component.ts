@@ -94,20 +94,20 @@ export class ProjectsComponent implements OnInit {
     },
     {
       _id: '2',
-      title: 'Application ToDo',
-      description: 'Application de gestion de tâches avec système de catégories et priorités.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
-      technologies: ['React', 'Node.js', 'PostgreSQL'],
-      githubUrl: 'https://github.com/nirina3040/todo-app',
-      liveUrl: 'https://www.youtube.com/watch?v=votre-video',
+      title: 'Gestion de Pharmacie',
+      description: 'Application web complète de gestion de pharmacie permettant la gestion des médicaments, des stocks, des ventes, des factures et des demandes clients avec tableau de bord interactif, notifications en temps réel et export PDF.',
+      imageUrl: 'assets/pharmacie.png', 
+      technologies: ['Angular', 'Express', 'PostgreSQL'],
+      githubUrl: 'https://github.com/nirina3040/pharmacie/',
+      liveUrl: 'https://youtu.be/X5bmoUrgxOI',
       featured: false,
-      createdAt: new Date('2024-02-20')
+      createdAt: new Date('2024-05-13')
     },
     {
       _id: '3',
       title: 'API Météo',
       description: 'Application météo consommant une API REST avec géolocalisation.',
-      imageUrl: 'assets/logo.jpg',  // ✅ Image locale
+      imageUrl: 'assets/logo.jpg', 
       technologies: ['Angular'],
       githubUrl: 'https://github.com/nirina3040/weather-app',
       liveUrl: 'https://www.youtube.com/watch?v=votre-video',
