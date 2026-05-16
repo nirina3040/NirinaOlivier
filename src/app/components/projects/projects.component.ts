@@ -105,11 +105,11 @@ export class ProjectsComponent implements OnInit {
     },
     {
       _id: '3',
-      title: 'API Météo',
-      description: 'Application météo consommant une API REST avec géolocalisation.',
-      imageUrl: 'assets/logo.jpg', 
-      technologies: ['Angular'],
-      githubUrl: 'https://github.com/nirina3040/weather-app',
+      title: 'Plateforme E-commerce Complète',
+      description: 'Une plateforme e-commerce complète avec permettant la gestion de produits, panier d\'achat, commandes, paiement sécurisé et une interface d\'administration pour la gestion complète de la boutique en ligne.',
+      imageUrl: 'assets/vitrine.png', 
+      technologies: ['Angular', 'Express', 'PostgreSQL'],
+      githubUrl: 'https://github.com/nirina3040/Vitrine',
       liveUrl: 'https://www.youtube.com/watch?v=votre-video',
       featured: false,
       createdAt: new Date('2024-03-10')
