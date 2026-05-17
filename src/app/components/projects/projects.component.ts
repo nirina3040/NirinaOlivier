@@ -110,7 +110,7 @@ export class ProjectsComponent implements OnInit {
       imageUrl: 'assets/vitrine.png', 
       technologies: ['Angular', 'Express', 'PostgreSQL'],
       githubUrl: 'https://github.com/nirina3040/Vitrine',
-      liveUrl: 'https://www.youtube.com/watch?v=votre-video',
+      liveUrl: 'https://youtu.be/SmdkRE4x6dk',
       featured: false,
       createdAt: new Date('2024-03-10')
     },
