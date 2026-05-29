@@ -139,11 +139,22 @@ export class ProjectsComponent implements OnInit {
     {
       _id: '6',
       title: 'Motivation Education Prediction',
-      description: 'Motivation Education Prediction est une application intelligente conçue pour aider les utilisateurs à améliorer leur motivation, leur apprentissage et leur prise de décision grâce à l’analyse des données et à l’intelligence artificielle',
+      description: 'Motivation Education Prediction est une application intelligente conçue pour aider les utilisateurs à améliorer leur motivation, leur apprentissage et leur prise de décision grâce à l\’analyse des données et à l\’intelligence artificielle',
       imageUrl: 'assets/apex.png',
       technologies: ['Flutter', 'Python'],
       githubUrl: 'https://github.com/RNO-Nirina-Olivier',
       liveUrl: 'https://youtu.be/bRSKyGKnd5A',
+      featured: false,
+      createdAt: new Date('2026-05-10')
+    },
+        {
+      _id: '7',
+      title: 'WiFi QR Analyzer',
+      description: 'Le projet WiFi QR Analyzer est une application web développée avec Angular permettant de scanner et d\’analyser des QR Codes Wi-Fi afin d\’extraire automatiquement les informations du réseau (SSID, type de sécurité et mot de passe). Il offre une interface moderne et intuitive pour importer une image, avec affichage clair des résultats et gestion de l\’historique des scans',
+      imageUrl: 'assets/wifi.png',
+      technologies: ['Angular'],
+      githubUrl: 'https://github.com/nirina3040/wifi',
+      liveUrl: 'https://youtu.be/qbSj_g1DsBg',
       featured: false,
       createdAt: new Date('2026-05-10')
     }
