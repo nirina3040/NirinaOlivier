@@ -58,7 +58,7 @@ export class AboutComponent implements OnInit {
       description: 'Spécialisation en architectures web modernes'
     },
     {
-      period: '203 - 2025',
+      period: '2023 - 2025',
       title: 'Licence Informatique',
       school: 'Ecole Nationale d\'Informatique Fianarantsoa',
       description: 'Fondamentaux de l\'informatique et programmation'

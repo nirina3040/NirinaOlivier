@@ -157,7 +157,41 @@ export class ProjectsComponent implements OnInit {
       liveUrl: 'https://youtu.be/qbSj_g1DsBg',
       featured: false,
       createdAt: new Date('2026-05-10')
-    }
+    },
+      {
+    _id: '8',
+    title: 'AlgoCode Test',
+    description: 'AlgoCode Test est une plateforme web interactive dédiée à l\’entraînement et à l\’évaluation des compétences en algorithmique et en programmation C et C++. Elle permet aux utilisateurs de réaliser différents tests et exercices, de répondre aux questions proposées et d\’obtenir leurs résultats afin de suivre leur progression. La plateforme offre une interface simple et intuitive adaptée à l\’apprentissage et à l\’évaluation des connaissances en programmation.',
+    imageUrl: 'assets/algocode.png',
+    technologies: ['Angular', 'Express'],
+    githubUrl: 'https://github.com/nirina3040/front_eduteur',
+    liveUrl: 'https://rno-eduteur.onrender.com/',
+    featured: false,
+    createdAt: new Date('2026-09-08')
+  },
+  {
+    _id: '9',
+    title: 'Reseau de Petrie',
+    description: 'Conception et modélisation d’un système automatisé de production, de stockage et de vissage des vis à l’aide d’un Réseau de Pétri permettant de coordonner la machine de production et les deux robots R1 et R2.',
+    imageUrl: 'assets/rdp.png',
+    technologies: ['Angular', 'Express'],
+    githubUrl: 'https://github.com/nirina3040/',
+    liveUrl: 'https://youtu.be/C-LIMCfbg-k',
+    featured: false,
+    createdAt: new Date('2026-09-08')
+  },
+  {
+    _id: '10',
+    title: 'JAVA HIBERNATE',
+    description: 'Application web de gestion des salles de classe développée en Java avec Hibernate/MySQL, JSP et Bootstrap, incluant authentification par rôles, recherche instantanée, vue calendrier, export PDF et tableaux de bord statistiques',
+    imageUrl: 'assets/hibernate.png',
+    technologies: ['Java', 'JSP','Hibernate', 'MySQL'],
+    githubUrl: 'https://github.com/nirina3040/',
+    liveUrl: 'https://youtu.be/vlOaXHafKYc',
+    featured: false,
+    createdAt: new Date('2026-09-08')
+  }
+
   ];
 }
 }
