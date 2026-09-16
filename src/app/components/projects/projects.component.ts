@@ -201,6 +201,17 @@ export class ProjectsComponent implements OnInit {
     liveUrl: 'https://rno-documentation.onrender.com/',
     featured: false,
     createdAt: new Date('2026-09-16')
+  },
+  {
+    _id: '12',
+    title: 'PLATFORM WEB SIG',
+    description: 'Application Android qui partage la dernière position GPS de l\'appareil, consultable en temps réel sur une plateforme web',
+    imageUrl: 'assets/sig.png',
+    technologies: ['Angular', 'Express', 'PostgreSQL'],
+    githubUrl: 'https://github.com/nirina3040/',
+    liveUrl: 'https://rno-websig.onrender.com/',
+    featured: false,
+    createdAt: new Date('2026-09-16')
   }
 
   ];
