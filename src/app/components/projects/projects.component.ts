@@ -190,6 +190,17 @@ export class ProjectsComponent implements OnInit {
     liveUrl: 'https://youtu.be/vlOaXHafKYc',
     featured: false,
     createdAt: new Date('2026-09-08')
+  },
+  {
+    _id: '11',
+    title: 'GESTION DE DOCUMENT',
+    description: 'Gestion électronique des documents avec application mobile de numérisation',
+    imageUrl: 'assets/document.png',
+    technologies: ['Angular', 'Express'],
+    githubUrl: 'https://github.com/nirina3040/',
+    liveUrl: 'https://rno-documentation.onrender.com/',
+    featured: false,
+    createdAt: new Date('2026-09-16')
   }
 
   ];
