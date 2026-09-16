@@ -154,7 +154,7 @@ export class ProjectsComponent implements OnInit {
       imageUrl: 'assets/wifi.png',
       technologies: ['Angular'],
       githubUrl: 'https://github.com/nirina3040/wifi',
-      liveUrl: 'https://youtu.be/qbSj_g1DsBg',
+      liveUrl: 'https://rno-wifi-qr-analyser.onrender.com/',
       featured: false,
       createdAt: new Date('2026-05-10')
     },
@@ -196,7 +196,7 @@ export class ProjectsComponent implements OnInit {
     title: 'GESTION DE DOCUMENT',
     description: 'Gestion électronique des documents avec application mobile de numérisation',
     imageUrl: 'assets/document.png',
-    technologies: ['Angular', 'Express'],
+    technologies: ['Angular', 'Express', 'PostgreSQL'],
     githubUrl: 'https://github.com/nirina3040/',
     liveUrl: 'https://rno-documentation.onrender.com/',
     featured: false,
