@@ -212,8 +212,18 @@ export class ProjectsComponent implements OnInit {
     liveUrl: 'https://rno-websig.onrender.com/',
     featured: false,
     createdAt: new Date('2026-09-16')
+  },
+ {
+    _id: '13',
+    title: 'DOAP ET SOCKET',
+    description: 'Tsenabiby est une application web développée avec Angular et Spring Boot permettant de gérer et de consulter des publications grâce aux services Web SOAP',
+    imageUrl: 'assets/soap.png',
+    technologies: ['Angular', 'Spring Boot'],
+    githubUrl: 'https://github.com/nirina3040/',
+    liveUrl: 'https://rno-soap-socket.onrender.com/',
+    featured: false,
+    createdAt: new Date('2026-09-16')
   }
-
   ];
 }
 }
