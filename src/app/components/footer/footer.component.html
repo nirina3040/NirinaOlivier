@@ -1,53 +1,130 @@
 <footer class="footer">
-  <div class="footer-content">
+  <div class="footer-top">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-section">
-          <h3 class="footer-logo">&lt;RNO/&gt;</h3>
-          <p>Développeur Full Stack par la création d'applications web innovantes.</p>
+        <!-- Logo & Bio -->
+        <div class="footer-section brand-col">
+          <div class="footer-logo">
+            <span class="logo-text">&lt;RNO/&gt;</span>
+            <span class="logo-full">Portfolio</span>
+          </div>
+          <p class="footer-desc">
+            Razafinirina Nomenjanahary Olivier — Développeur Full Stack passionné, créant des applications web modernes, robustes et performantes.
+          </p>
           <div class="footer-social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/nirina3040" target="_blank" rel="noopener noreferrer" title="GitHub" class="social-btn">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/nirinaolivier" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="social-btn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:nirinaolivier9@gmail.com" title="Envoyer un email" class="social-btn">
+              <i class="fas fa-envelope"></i>
+            </a>
           </div>
         </div>
 
+        <!-- Navigation Rapide -->
         <div class="footer-section">
-          <h4>Liens rapides</h4>
-          <ul>
-            <li><a routerLink="/">Accueil</a></li>
-            <li><a routerLink="/about">À propos</a></li>
-            <li><a routerLink="/projects">Projets</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li>
+              <a routerLink="/">
+                <i class="fas fa-chevron-right link-arrow"></i>
+                <span>Accueil</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/about">
+                <i class="fas fa-chevron-right link-arrow"></i>
+                <span>À propos</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/projects">
+                <i class="fas fa-chevron-right link-arrow"></i>
+                <span>Mes Projets</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/contact">
+                <i class="fas fa-chevron-right link-arrow"></i>
+                <span>Me Contacter</span>
+              </a>
+            </li>
           </ul>
         </div>
 
+        <!-- Domaines de compétences -->
         <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#">Développement Web</a></li>
-            <li><a href="#">Applications Mobiles</a></li>
-            <li><a href="#">API REST</a></li>
-            <li><a href="#">Consulting</a></li>
+          <h4 class="footer-title">Expertise</h4>
+          <ul class="footer-links expertise-list">
+            <li>
+              <span class="expertise-item">
+                <i class="fas fa-check-circle check-icon"></i>
+                <span>Angular & TypeScript</span>
+              </span>
+            </li>
+            <li>
+              <span class="expertise-item">
+                <i class="fas fa-check-circle check-icon"></i>
+                <span>Node.js & Express</span>
+              </span>
+            </li>
+            <li>
+              <span class="expertise-item">
+                <i class="fas fa-check-circle check-icon"></i>
+                <span>REST API & MongoDB</span>
+              </span>
+            </li>
+            <li>
+              <span class="expertise-item">
+                <i class="fas fa-check-circle check-icon"></i>
+                <span>UI/UX & Responsive</span>
+              </span>
+            </li>
           </ul>
         </div>
 
-        <div class="footer-section">
-          <h4>Newsletter</h4>
-          <p>Restez informé de mes derniers projets</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Votre email">
-            <button type="submit">
-              <i class="fas fa-paper-plane"></i>
-            </button>
+        <!-- Newsletter & Contact Rapide -->
+        <div class="footer-section newsletter-col">
+          <h4 class="footer-title">Restons en contact</h4>
+          <p class="newsletter-desc">
+            Vous avez une idée de projet ou une offre de stage ? Discutons-en ensemble :
+          </p>
+          <form class="newsletter-form" (submit)="$event.preventDefault()">
+            <div class="form-inner">
+              <i class="fas fa-paper-plane form-icon"></i>
+              <input type="email" placeholder="votre@email.com" aria-label="Votre adresse email">
+              <button type="submit" class="newsletter-btn" aria-label="Envoyer">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
           </form>
+          <a href="mailto:nirinaolivier9@gmail.com" class="direct-email-link">
+            <i class="fas fa-at"></i> nirinaolivier9&#64;gmail.com
+          </a>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="footer-bottom">
-        <p>&copy; {{ currentYear }} RNO. Tous droits réservés.</p>
-        <p>Fait avec Express js et Angular</p>
-      </div>
+  <!-- Footer Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="copyright">
+        &copy; {{ currentYear }} <strong>Razafinirina Olivier (RNO)</strong>. Tous droits réservés.
+      </p>
+      
+      <p class="built-with">
+        <i class="fas fa-heart heart-icon"></i>
+        Développé avec <strong>Angular</strong> & <strong>Node.js</strong>
+      </p>
+
+      <button (click)="scrollToTop()" class="scroll-top-btn" type="button" title="Retourner en haut">
+        <span>Haut de page</span>
+        <i class="fas fa-arrow-up"></i>
+      </button>
     </div>
   </div>
 </footer>

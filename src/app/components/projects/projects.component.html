@@ -1,25 +1,30 @@
 <section class="projects">
   <div class="container">
     <div class="section-header" [@fadeInUp]>
+      <span class="section-tag">
+        <i class="fas fa-laptop-code"></i> Réalisations
+      </span>
       <h2 class="section-title">Mes Projets</h2>
-      <p class="section-subtitle">Découvrez mes réalisations et projets d'apprentissage</p>
+      <p class="section-subtitle">Découvrez mes applications concrètes, projets d'apprentissage et architectures logicielles</p>
     </div>
 
-    <!-- Filtres -->
-    <div class="filters" [@fadeInUp]>
-      <button 
-        *ngFor="let category of categories"
-        class="filter-btn"
-        [class.active]="selectedCategory === category"
-        (click)="filterProjects(category)">
-        {{ category }}
-      </button>
+    <!-- Filtres de Catégories -->
+    <div class="filters-container" [@fadeInUp]>
+      <div class="filters">
+        <button 
+          *ngFor="let category of categories"
+          class="filter-btn"
+          [class.active]="selectedCategory === category"
+          (click)="filterProjects(category)">
+          <span>{{ category }}</span>
+        </button>
+      </div>
     </div>
 
     <!-- Loader -->
-    <div class="loader" *ngIf="isLoading">
+    <div class="loader-box" *ngIf="isLoading">
       <div class="spinner"></div>
-      <p>Chargement des projets...</p>
+      <p>Chargement des réalisations...</p>
     </div>
 
     <!-- Grille de projets -->
@@ -32,18 +37,23 @@
 
     <!-- Message si aucun projet -->
     <div class="no-projects" *ngIf="!isLoading && filteredProjects.length === 0">
-      <i class="fas fa-search"></i>
-      <p>Aucun projet trouvé dans cette catégorie</p>
+      <div class="no-projects-icon">
+        <i class="fas fa-folder-open"></i>
+      </div>
+      <h3>Aucun projet trouvé</h3>
+      <p>Aucun projet ne correspond à la catégorie sélectionnée.</p>
       <button class="reset-btn" (click)="filterProjects('Tous')">
-        Voir tous les projets
+        <i class="fas fa-redo"></i>
+        <span>Voir tous les projets</span>
       </button>
     </div>
 
-    <!-- Bouton voir plus sur GitHub -->
+    <!-- Bannière / Bouton GitHub -->
     <div class="show-more" *ngIf="!isLoading && filteredProjects.length > 0">
-      <a href="https://github.com/nirina3040" target="_blank" class="btn-more">
+      <a href="https://github.com/nirina3040" target="_blank" rel="noopener noreferrer" class="btn-more">
         <i class="fab fa-github"></i>
-        Voir plus sur GitHub
+        <span>Explorer plus de dépôts sur GitHub</span>
+        <i class="fas fa-arrow-right arrow-icon"></i>
       </a>
     </div>
   </div>

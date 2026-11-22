@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -10,17 +11,26 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  private themeService = inject(ThemeService);
+
   isScrolled = false;
   isMenuOpen = false;
 
+  get isDarkMode(): boolean {
+    return this.themeService.isDarkMode;
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    this.isScrolled = window.scrollY > 50;
+    this.isScrolled = window.scrollY > 30;
   }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
-    // Empêche le scroll du body quand le menu est ouvert
     if (this.isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {

@@ -37,6 +37,9 @@
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "fonts": false
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -99,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "79d9ecbb-d606-4ff0-b03d-f4e31cff3c5e"
   }
 }

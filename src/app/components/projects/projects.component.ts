@@ -215,7 +215,7 @@ export class ProjectsComponent implements OnInit {
   },
  {
     _id: '13',
-    title: 'DOAP ET SOCKET',
+    title: 'SOAP ET SOCKET',
     description: 'Tsenabiby est une application web développée avec Angular et Spring Boot permettant de gérer et de consulter des publications grâce aux services Web SOAP',
     imageUrl: 'assets/soap.png',
     technologies: ['Angular', 'Spring Boot'],

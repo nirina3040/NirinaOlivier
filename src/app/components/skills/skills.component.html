@@ -1,8 +1,11 @@
 <section class="skills">
   <div class="container">
     <div class="section-header">
+      <span class="section-tag">
+        <i class="fas fa-terminal"></i> Expertise
+      </span>
       <h2 class="section-title">Mes Compétences</h2>
-      <p class="section-subtitle">Technologies et outils que j'utilise</p>
+      <p class="section-subtitle">Technologies, frameworks, outils et méthodologies que j'utilise au quotidien</p>
     </div>
 
     <!-- Catégories -->
@@ -18,35 +21,36 @@
     </div>
 
     <!-- Liste des compétences -->
-    <div class="skills-list" [class.animating]="isAnimating">
-      <div class="skill-item" *ngFor="let skill of selectedSkills; let i = index" 
-           [style.animation-delay]="i * 0.1 + 's'">
+    <div class="skills-grid" [class.animating]="isAnimating">
+      <div class="skill-card" *ngFor="let skill of selectedSkills; let i = index" 
+           [style.animation-delay]="i * 0.08 + 's'">
         <div class="skill-header">
           <div class="skill-info">
-            <i [class]="skill.icon" class="skill-icon"></i>
+            <div class="skill-icon-wrapper">
+              <i [class]="skill.icon" class="skill-icon"></i>
+            </div>
             <span class="skill-name">{{ skill.name }}</span>
           </div>
-          <span class="skill-level">{{ skill.level }}%</span>
+          <span class="skill-level-badge">{{ skill.level }}%</span>
         </div>
         
-        <div class="skill-bar">
+        <div class="skill-bar-wrapper">
           <div 
-            class="skill-progress" 
-            [style.width.%]="skill.level"
-            [style.background]="getProgressColor(skill.level)">
+            class="skill-bar-progress" 
+            [style.width.%]="skill.level">
           </div>
         </div>
 
-        <div class="skill-details">
-          <div class="skill-level-indicator">
+        <div class="skill-footer">
+          <div class="skill-dots">
             <span 
               *ngFor="let dot of [].constructor(5); let j = index"
-              class="level-dot"
+              class="dot"
               [class.filled]="j < Math.ceil(skill.level / 20)">
             </span>
           </div>
-          <span class="skill-label">
-            {{ skill.level >= 90 ? 'Expert' : skill.level >= 75 ? 'Avancé' : skill.level >= 60 ? 'Intermédiaire' : 'Débutant' }}
+          <span class="skill-badge-tag">
+            {{ skill.level >= 90 ? 'Expert' : skill.level >= 75 ? 'Avancé' : skill.level >= 60 ? 'Intermédiaire' : 'Apprenti' }}
           </span>
         </div>
       </div>
@@ -56,24 +60,32 @@
     <div class="skills-stats">
       <div class="stat-card">
         <div class="stat-icon">
-          <i class="fas fa-code"></i>
+          <i class="fas fa-cubes"></i>
         </div>
-        <span class="stat-number">{{ getSkillCategories().length }}</span>
-        <span class="stat-label">Catégories</span>
+        <div class="stat-meta">
+          <span class="stat-number">{{ getSkillCategories().length }}</span>
+          <span class="stat-label">Catégories</span>
+        </div>
       </div>
+
       <div class="stat-card">
         <div class="stat-icon">
-          <i class="fas fa-tools"></i>
+          <i class="fas fa-layer-group"></i>
         </div>
-        <span class="stat-number">{{ getTotalSkills() }}</span>
-        <span class="stat-label">Compétences</span>
+        <div class="stat-meta">
+          <span class="stat-number">{{ getTotalSkills() }}</span>
+          <span class="stat-label">Technologies</span>
+        </div>
       </div>
+
       <div class="stat-card">
         <div class="stat-icon">
-          <i class="fas fa-trophy"></i>
+          <i class="fas fa-chart-line"></i>
         </div>
-        <span class="stat-number">{{ getAverageLevel() }}%</span>
-        <span class="stat-label">Moyenne</span>
+        <div class="stat-meta">
+          <span class="stat-number">{{ getAverageLevel() }}%</span>
+          <span class="stat-label">Niveau Moyen</span>
+        </div>
       </div>
     </div>
   </div>

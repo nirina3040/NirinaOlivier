@@ -1,10 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   DESIGN SYSTEM & THEME CONFIGURATION (BLEU CIEL / AZURE THEME)
+   ========================================================================== */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  /* Mode Clair (Off-white / Slate épuré & Bleu Ciel) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-card: rgba(255, 255, 255, 0.9);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  
+  --border-color: rgba(15, 23, 42, 0.08);
+  --border-color-hover: rgba(14, 165, 233, 0.45);
+  
+  --accent-primary: #0284c7;
+  --accent-secondary: #0ea5e9;
+  --accent-cyan: #06b6d4;
+  --accent-gradient: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #06b6d4 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0891b2 100%);
+  --accent-glow: rgba(14, 165, 233, 0.28);
+  --accent-light: rgba(14, 165, 233, 0.1);
+  
+  --badge-bg: rgba(14, 165, 233, 0.09);
+  --badge-text: #0284c7;
+  --badge-border: rgba(14, 165, 233, 0.22);
+  
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --card-shadow-hover: 0 20px 35px -8px rgba(14, 165, 233, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(15, 23, 42, 0.08);
+  --nav-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  
+  --input-bg: #ffffff;
+  --input-border: rgba(15, 23, 42, 0.12);
+  --input-focus-border: #0ea5e9;
+  
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+  
+  --hero-pattern: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.14) 0%, transparent 60%);
+  --footer-bg: #ffffff;
+  --footer-border: rgba(15, 23, 42, 0.08);
+  --footer-bottom-bg: #f8fafc;
+}
 
+body.dark-theme,
+[data-theme="dark"] {
+  /* Mode Sombre (Noir ardoise profond & Bleu Ciel éclatant) */
+  --bg-primary: #090d16;
+  --bg-secondary: #0f1422;
+  --bg-surface: #131929;
+  --bg-surface-elevated: #1a2238;
+  --bg-glass: rgba(15, 20, 34, 0.85);
+  --bg-glass-card: rgba(19, 25, 41, 0.88);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #8292a8;
+  
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-color-hover: rgba(56, 189, 248, 0.5);
+  
+  --accent-primary: #38bdf8;
+  --accent-secondary: #0ea5e9;
+  --accent-cyan: #22d3ee;
+  --accent-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #22d3ee 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #0ea5e9 0%, #7dd3fc 50%, #67e8f9 100%);
+  --accent-glow: rgba(56, 189, 248, 0.35);
+  --accent-light: rgba(56, 189, 248, 0.16);
+  
+  --badge-bg: rgba(56, 189, 248, 0.15);
+  --badge-text: #7dd3fc;
+  --badge-border: rgba(56, 189, 248, 0.3);
+  
+  --card-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 20px 45px -10px rgba(14, 165, 233, 0.3), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+  
+  --nav-bg: rgba(9, 13, 22, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+  
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: #38bdf8;
+  
+  --scrollbar-track: #090d16;
+  --scrollbar-thumb: #232d42;
+  --scrollbar-thumb-hover: #3b4968;
+  
+  --hero-pattern: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.22) 0%, transparent 65%);
+  --footer-bg: #05070c;
+  --footer-border: rgba(255, 255, 255, 0.06);
+  --footer-bottom-bg: #030408;
+}
 
-* {
+/* ==========================================================================
+   BASE RESET & TYPOGRAPHY
+   ========================================================================== */
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,61 +113,118 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  min-height: 100%;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// Scrollbar personnalisée
+/* Scrollbar Stylée */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 10px;
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #667eea;
+  background: var(--scrollbar-thumb-hover);
 }
 
-// Classes utilitaires
+/* ==========================================================================
+   SHARED UTILITIES
+   ========================================================================== */
+
 .text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.shadow-custom {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+.font-mono {
+  font-family: 'JetBrains Mono', Consolas, Menlo, Monaco, monospace;
 }
 
-// Animation classes
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.shadow-custom {
+  box-shadow: var(--card-shadow);
+}
 
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Section Header standardisé pour cohérence */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    border-radius: 999px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--badge-text);
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55px;
+      height: 4px;
+      background: var(--accent-gradient);
+      border-radius: 4px;
+    }
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 1.25rem auto 0;
   }
 }
 
-// Media queries de base
+/* Responsive global */
 @media (max-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 14.5px;
+  }
+  .section-header {
+    margin-bottom: 2.5rem;
   }
 }

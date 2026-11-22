@@ -3,57 +3,76 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background-color: var(--bg-primary);
+  background-image: var(--hero-pattern);
   text-align: center;
   padding: 2rem;
+  transition: background-color 0.3s ease;
 }
 
 .not-found-content {
-  color: white;
+  color: var(--text-primary);
+  max-width: 500px;
+}
+
+.error-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--badge-text);
+  margin-bottom: 1.5rem;
 }
 
 .error-code {
-  font-size: 10rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(6rem, 15vw, 10rem);
   font-weight: 900;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1;
   margin-bottom: 1rem;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  letter-spacing: -4px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+  color: var(--text-primary);
 }
 
 p {
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.25rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .home-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 0.85rem 1.85rem;
+  background: var(--accent-gradient);
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 18px var(--accent-glow);
+  transition: all 0.25s ease;
 
   &:hover {
+    background: var(--accent-gradient-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 6px 25px var(--accent-glow);
   }
 }

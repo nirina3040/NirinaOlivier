@@ -15,7 +15,7 @@ export class ProjectCardComponent {
 
   getGradient(index: number = 0): string {
     const gradients = [
-      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      'linear-gradient(135deg, #0284c7 0%, #00d2fe 100%)',
       'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
       'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',

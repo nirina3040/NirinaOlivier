@@ -3,6 +3,7 @@
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
     <div class="circle circle-3"></div>
+    <div class="grid-overlay"></div>
   </div>
 
   <div class="hero-container">
@@ -13,14 +14,15 @@
       </div>
       <div class="photo-status">
         <span class="status-dot"></span>
-        Disponible pour stage
+        <span>Disponible pour stage & opportunités</span>
       </div>
     </div>
 
     <!-- Contenu texte -->
     <div class="hero-content" [@fadeInUp]>
       <div class="hero-badge" [@fadeIn]>
-        <span>👋 Bienvenue sur mon portfolio</span>
+        <span class="badge-icon">👋</span>
+        <span>Bienvenue sur mon portfolio</span>
       </div>
 
       <h1 class="hero-title">
@@ -35,8 +37,8 @@
       </div>
 
       <p class="hero-description" [@fadeIn]>
-        Étudiant en développement web, j'apprends à créer des applications 
-        modernes avec Angular et Node.js.
+        Étudiant en développement web passionné par l'écosystème moderne. Je crée des applications
+        web réactives, robustes et élégantes avec Angular et Node.js.
       </p>
 
       <div class="hero-buttons" [@fadeIn]>
@@ -46,7 +48,7 @@
         </a>
         <a routerLink="/contact" class="btn btn-secondary">
           <span>Me contacter</span>
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-paper-plane"></i>
         </a>
       </div>
 
@@ -55,13 +57,15 @@
           <span class="stat-number">5+</span>
           <span class="stat-label">Projets</span>
         </div>
+        <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number">En cours</span>
-          <span class="stat-label">Formation</span>
+          <span class="stat-number">Full Stack</span>
+          <span class="stat-label">Spécialisation</span>
         </div>
+        <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number">2023</span>
-          <span class="stat-label">Début</span>
+          <span class="stat-number">2023+</span>
+          <span class="stat-label">Parcours</span>
         </div>
       </div>
     </div>

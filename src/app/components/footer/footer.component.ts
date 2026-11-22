@@ -3,11 +3,17 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  standalone: true,  // ✅ AJOUTÉ
-  imports: [RouterLink],  // ✅ AJOUTÉ
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
+
+  scrollToTop(): void {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }

@@ -76,7 +76,7 @@ export class SkillsComponent implements OnInit {
 
   getProgressColor(level: number): string {
     if (level >= 90) return '#4caf50';
-    if (level >= 75) return '#667eea';
+    if (level >= 75) return '#0284c7';
     if (level >= 60) return '#ff9800';
     return '#f44336';
   }

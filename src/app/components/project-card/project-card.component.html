@@ -1,59 +1,54 @@
 <div class="project-card">
-  <div class="project-image" [style.background]="getGradient(0)">
+  <div class="project-image-container">
     <!-- Image si disponible -->
     <img *ngIf="project.imageUrl && !imageError" 
          [src]="project.imageUrl" 
          [alt]="project.title" 
          (error)="onImageError()"
+         class="project-img"
          loading="lazy">
     
     <!-- Icône par défaut si pas d'image -->
-    <div class="project-icon" *ngIf="!project.imageUrl || imageError">
-      <i class="fas fa-code"></i>
+    <div class="project-icon-fallback" *ngIf="!project.imageUrl || imageError" [style.background]="getGradient(0)">
+      <i class="fas fa-layer-group"></i>
     </div>
     
     <!-- Overlay au survol -->
     <div class="project-overlay">
-      <div class="project-links">
-        <!-- Lien GitHub -->
+      <div class="project-quick-links">
         <a *ngIf="project.githubUrl" 
            [href]="project.githubUrl" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="project-link github-link" 
+           class="quick-btn github" 
            title="Voir le code source">
           <i class="fab fa-github"></i>
-          <span class="tooltip">Code source</span>
         </a>
         
-        <!-- Lien Démo (YouTube ou site) -->
         <a *ngIf="project.liveUrl" 
            [href]="project.liveUrl" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="project-link demo-link" 
-           [class.youtube-link]="isYoutubeLink(project.liveUrl)"
-           title="Voir la démo">
+           class="quick-btn demo" 
+           [class.youtube]="isYoutubeLink(project.liveUrl)"
+           title="Voir la démonstration">
           <i [class]="isYoutubeLink(project.liveUrl) ? 'fab fa-youtube' : 'fas fa-external-link-alt'"></i>
-          <span class="tooltip">Voir la démo</span>
         </a>
       </div>
     </div>
 
     <!-- Badge featured -->
     <span class="featured-badge" *ngIf="project.featured">
-      <i class="fas fa-star"></i> Projet phare
+      <i class="fas fa-star"></i> Phare
     </span>
   </div>
 
-  <div class="project-info">
+  <div class="project-body">
     <h3 class="project-title">{{ project.title }}</h3>
     <p class="project-description">{{ getShortDescription() }}</p>
     
     <div class="project-tech">
-      <span *ngFor="let tech of project.technologies; let i = index" 
-            class="tech-tag"
-            [style.animation-delay]="i * 0.05 + 's'">
+      <span *ngFor="let tech of project.technologies" class="tech-tag">
         {{ tech }}
       </span>
     </div>
@@ -70,7 +65,8 @@
            target="_blank"
            rel="noopener noreferrer"
            class="btn-action btn-github">
-          <i class="fab fa-github"></i> Code
+          <i class="fab fa-github"></i>
+          <span>Code</span>
         </a>
         <a *ngIf="project.liveUrl" 
            [href]="project.liveUrl" 
@@ -78,8 +74,8 @@
            rel="noopener noreferrer"
            class="btn-action btn-demo"
            [class.btn-youtube]="isYoutubeLink(project.liveUrl)">
-          <i [class]="isYoutubeLink(project.liveUrl) ? 'fab fa-youtube' : 'fas fa-play'"></i> 
-          Démo
+          <i [class]="isYoutubeLink(project.liveUrl) ? 'fab fa-youtube' : 'fas fa-arrow-up-right-from-square'"></i> 
+          <span>Démo</span>
         </a>
       </div>
     </div>

@@ -3,21 +3,10 @@
     <!-- Logo -->
     <a routerLink="/" class="logo" (click)="closeMenu()">
       <span class="logo-text">&lt;RNO/&gt;</span>
-      <span class="logo-full">Mon Portfolio</span>
+      <span class="logo-full">Portfolio</span>
     </a>
 
-    <!-- Menu burger pour mobile -->
-    <button 
-      class="menu-toggle" 
-      [class.active]="isMenuOpen"
-      (click)="toggleMenu()"
-      aria-label="Menu de navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Navigation -->
+    <!-- Navigation Desktop -->
     <ul class="nav-menu" [class.active]="isMenuOpen">
       <li>
         <a routerLink="/" 
@@ -53,9 +42,49 @@
            target="_blank" 
            class="btn-cv" 
            (click)="closeMenu()">
-          Mon CV
+          <i class="fas fa-file-pdf"></i>
+          <span>Mon CV</span>
         </a>
       </li>
+      
+      <!-- Bouton Thème dans menu mobile -->
+      <li class="mobile-theme-item">
+        <button 
+          class="mobile-theme-btn" 
+          (click)="toggleTheme()" 
+          type="button">
+          <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+          <span>{{ isDarkMode ? 'Mode Clair' : 'Mode Sombre' }}</span>
+        </button>
+      </li>
     </ul>
+
+    <!-- Actions Droite (Desktop Theme Toggle + Burger) -->
+    <div class="nav-actions">
+      <!-- Theme Switcher Desktop -->
+      <button 
+        class="theme-toggle-btn" 
+        (click)="toggleTheme()" 
+        type="button"
+        [attr.aria-label]="isDarkMode ? 'Passer au mode clair' : 'Passer au mode sombre'"
+        [title]="isDarkMode ? 'Activer le mode clair' : 'Activer le mode sombre'">
+        <i [class]="isDarkMode ? 'fas fa-sun sun-icon' : 'fas fa-moon moon-icon'"></i>
+      </button>
+
+      <!-- Menu burger pour mobile -->
+      <button 
+        class="menu-toggle" 
+        [class.active]="isMenuOpen"
+        (click)="toggleMenu()"
+        type="button"
+        aria-label="Menu de navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
+
+  <!-- Overlay Mobile -->
+  <div class="menu-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
 </header>
